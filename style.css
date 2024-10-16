@@ -3,29 +3,51 @@ body {
     flex-direction: column;
     align-items: center;
     font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+}
+
+h1 {
+    color: #333;
+    font-size: 24px;
+    margin-top: 20px;
 }
 
 .wheel-container {
     position: relative;
     width: 300px;
     height: 300px;
-    margin-top: 50px;
+    margin-top: 20px;
 }
 
 .wheel {
     width: 100%;
     height: 100%;
     border-radius: 50%;
-    border: 10px solid #333;
-    background: conic-gradient(
-        #ff0000 0% 25%, 
-        #00ff00 25% 50%, 
-        #0000ff 50% 75%, 
-        #ffff00 75% 100%
-    );
+    position: relative;
     transition: transform 4s ease;
     transform-origin: center;
 }
+
+.segment {
+    position: absolute;
+    width: 50%;
+    height: 50%;
+    background-color: #ffc107;
+    border: 3px solid #fff;
+    border-radius: 0 100% 0 0;
+    transform-origin: bottom right;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+    font-weight: bold;
+    color: #333;
+}
+
+.segment:nth-child(1) { background-color: #ff6f61; } /* 奖品A */
+.segment:nth-child(2) { background-color: #ffeb3b; } /* 奖品B */
+.segment:nth-child(3) { background-color: #4caf50; } /* 奖品C */
+.segment:nth-child(4) { background-color: #2196f3; } /* 奖品D */
 
 .pointer {
     position: absolute;
@@ -41,19 +63,24 @@ body {
 
 #spinButton {
     margin-top: 20px;
-    padding: 10px 20px;
-    font-size: 16px;
+    padding: 12px 24px;
+    font-size: 18px;
+    background-color: #4CAF50;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
     cursor: pointer;
 }
 
 #spinButton:hover {
-    background-color: #f0f0f0;
+    background-color: #45a049;
 }
 
 #result {
     margin-top: 20px;
-    font-size: 18px;
+    font-size: 20px;
     font-weight: bold;
+    color: #333;
     opacity: 0;
     transition: opacity 0.5s ease;
 }
