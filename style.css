@@ -3,7 +3,7 @@ body {
     justify-content: center;
     align-items: center;
     height: 100vh;
-    background-color: #f0f0f0;
+    background-color: #e0f7fa;
     margin: 0;
     font-family: Arial, sans-serif;
 }
@@ -22,25 +22,26 @@ canvas {
     width: 0;
     height: 0;
     border-style: solid;
-    border-width: 0 20px 40px 20px;
-    border-color: transparent transparent #ff0000 transparent;
-    transform: translate(-50%, -300%);
-    box-shadow: 0 0 10px rgba(255, 0, 0, 0.7);
+    border-width: 0 25px 50px 25px;
+    border-color: transparent transparent #ff1744 transparent;
+    transform: translate(-50%, -280%);
+    filter: drop-shadow(0 0 10px #ff1744);
 }
 button {
     margin-top: 20px;
-    padding: 10px 20px;
-    font-size: 16px;
+    padding: 12px 25px;
+    font-size: 18px;
     border: none;
-    background-color: #4caf50;
+    background-color: #00796b;
     color: #fff;
     cursor: pointer;
     border-radius: 5px;
-    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
-    transition: background-color 0.3s;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    transition: background-color 0.3s, transform 0.2s;
 }
 button:hover {
-    background-color: #45a049;
+    background-color: #004d40;
+    transform: translateY(-3px);
 }
 button:disabled {
     background-color: #ccc;
