@@ -6,6 +6,7 @@ let arc = Math.PI / 3;  // 一圈分为6份，每个奖品占1/6圈
 const colors = ["#f94144", "#f3722c", "#f9c74f", "#90be6d", "#577590", "#8d99ae"];
 const prizes = ["奖品A", "奖品B", "奖品C", "奖品D", "奖品E", "奖品F"];
 let startAngle = 0;
+let isSpinning = false;
 
 function drawWheel() {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
@@ -27,6 +28,9 @@ function drawWheel() {
 }
 
 spinButton.addEventListener("click", () => {
+    if (isSpinning) return;
+    isSpinning = true;
+
     let randomSpin = Math.floor(3000 + Math.random() * 3000);  // 随机旋转角度
     let spinInterval = setInterval(() => {
         startAngle += 0.05;
@@ -37,6 +41,7 @@ spinButton.addEventListener("click", () => {
         clearInterval(spinInterval);
         const finalAngle = (startAngle % (2 * Math.PI)) + Math.PI / 6;  // 停止角度
         const winningIndex = Math.floor(finalAngle / arc) % prizes.length;
+        drawWheel();  // 最后绘制一次轮盘以确保停止的角度正确
         alert("恭喜你获得了：" + prizes[winningIndex]);
     }, randomSpin);
 });
