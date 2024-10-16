@@ -11,7 +11,7 @@ document.addEventListener('DOMContentLoaded', () => {
         wheel.style.transform = `rotate(${randomDegree}deg)`;
 
         // 计算获奖奖项
-        const prizeIndex = Math.floor((randomDegree % 360) / (360 / prizes.length));
+        const prizeIndex = Math.floor(((randomDegree % 360) + 30) % 360 / (360 / prizes.length));
 
         // 显示结果
         setTimeout(() => {
