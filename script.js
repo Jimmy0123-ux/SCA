@@ -13,8 +13,8 @@ function drawWheel() {
     for (let i = 0; i < prizes.length; i++) {
         const angle = startAngle + i * arc;
         ctx.beginPath();
+        ctx.moveTo(250, 250);
         ctx.arc(250, 250, 250, angle, angle + arc, false);
-        ctx.lineTo(250, 250);
         ctx.fillStyle = colors[i];
         ctx.fill();
         ctx.save();
@@ -30,6 +30,7 @@ function drawWheel() {
 spinButton.addEventListener("click", () => {
     if (isSpinning) return;
     isSpinning = true;
+    spinButton.disabled = true;
 
     let randomSpin = Math.floor(3000 + Math.random() * 3000);  // 随机旋转角度
     let spinInterval = setInterval(() => {
