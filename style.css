@@ -1,3 +1,17 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f0f0f0;
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+.container {
+    text-align: center;
+}
+
 #wheel {
     width: 300px;
     height: 300px;
@@ -14,8 +28,21 @@
     position: relative;
     transition: transform 4s ease;
 }
+
+.arrow {
+    width: 0;
+    height: 0;
+    border-left: 15px solid transparent;
+    border-right: 15px solid transparent;
+    border-bottom: 30px solid #333;
+    position: absolute;
+    top: -40px;
+    left: calc(50% - 15px);
+}
+
 #spinButton {
     margin-top: 20px;
     padding: 10px 20px;
     font-size: 16px;
+    cursor: pointer;
 }
