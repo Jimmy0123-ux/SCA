@@ -5,10 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>转盘抽奖游戏</title>
     <link rel="stylesheet" href="style.css">
-</head
+</head>
 <body>
+    <h1>幸运转盘抽奖游戏</h1>
     <div class="wheel-container">
-        <div class="wheel" id="wheel"></div>
+        <div class="wheel" id="wheel">
+            <!-- 奖品内容分区 -->
+            <div class="segment" style="transform: rotate(0deg);">奖品A</div>
+            <div class="segment" style="transform: rotate(90deg);">奖品B</div>
+            <div class="segment" style="transform: rotate(180deg);">奖品C</div>
+            <div class="segment" style="transform: rotate(270deg);">奖品D</div>
+        </div>
         <div class="pointer"></div> <!-- 指针 -->
     </div>
     <button id="spinButton">开始抽奖</button>
